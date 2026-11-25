@@ -1,0 +1,119 @@
+[
+  {
+    "owner_type": "角色",
+    "owner": "林遥",
+    "path": "one_line_positioning[0]",
+    "claim": "遇事先替舟舟安排退路，也愿意留下承担风险。",
+    "suggested_status": "人物理解",
+    "confidence": 0.85,
+    "evidence_ids": [
+      "S0001",
+      "S0002"
+    ],
+    "editor_decision": "",
+    "editor_notes": ""
+  },
+  {
+    "owner_type": "角色",
+    "owner": "林遥",
+    "path": "first_impression[0]",
+    "claim": "遇事先替舟舟安排退路，也愿意留下承担风险。",
+    "suggested_status": "人物理解",
+    "confidence": 0.85,
+    "evidence_ids": [
+      "S0001",
+      "S0002"
+    ],
+    "editor_decision": "",
+    "editor_notes": ""
+  },
+  {
+    "owner_type": "角色",
+    "owner": "林遥",
+    "path": "unconfirmed_questions",
+    "claim": "这个初步印象是否会在后续剧情中发生变化？",
+    "suggested_status": "待确认",
+    "confidence": 0,
+    "evidence_ids": [],
+    "editor_decision": "",
+    "editor_notes": ""
+  },
+  {
+    "owner_type": "角色",
+    "owner": "舟舟",
+    "path": "one_line_positioning[0]",
+    "claim": "不愿独自离开，主动选择与林遥一起等待。",
+    "suggested_status": "人物理解",
+    "confidence": 0.85,
+    "evidence_ids": [
+      "S0001",
+      "S0002"
+    ],
+    "editor_decision": "",
+    "editor_notes": ""
+  },
+  {
+    "owner_type": "角色",
+    "owner": "舟舟",
+    "path": "first_impression[0]",
+    "claim": "不愿独自离开，主动选择与林遥一起等待。",
+    "suggested_status": "人物理解",
+    "confidence": 0.85,
+    "evidence_ids": [
+      "S0001",
+      "S0002"
+    ],
+    "editor_decision": "",
+    "editor_notes": ""
+  },
+  {
+    "owner_type": "角色",
+    "owner": "舟舟",
+    "path": "unconfirmed_questions",
+    "claim": "这个初步印象是否会在后续剧情中发生变化？",
+    "suggested_status": "待确认",
+    "confidence": 0,
+    "evidence_ids": [],
+    "editor_decision": "",
+    "editor_notes": ""
+  },
+  {
+    "owner_type": "关系",
+    "owner": "林遥 × 舟舟",
+    "path": "surface_relation[0]",
+    "claim": "彼此牵挂",
+    "suggested_status": "人物理解",
+    "confidence": 0.85,
+    "evidence_ids": [
+      "S0001",
+      "S0002"
+    ],
+    "editor_decision": "",
+    "editor_notes": ""
+  },
+  {
+    "owner_type": "关系",
+    "owner": "林遥 × 舟舟",
+    "path": "underlying_state[0]",
+    "claim": "林遥想让舟舟先走，舟舟撕掉船票，选择留下陪她等待。",
+    "suggested_status": "人物理解",
+    "confidence": 0.85,
+    "evidence_ids": [
+      "S0001",
+      "S0002"
+    ],
+    "editor_decision": "",
+    "editor_notes": ""
+  },
+  {
+    "owner_type": "关系",
+    "owner": "林遥 × 舟舟",
+    "path": "unresolved_questions",
+    "claim": "双方视角、权力变化与未说出口的信息待深度分析。",
+    "suggested_status": "待确认",
+    "confidence": 0,
+    "evidence_ids": [],
+    "editor_decision": "",
+    "editor_notes": ""
+  }
+]

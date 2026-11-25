@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "林遥",
+      "label": "林遥"
+    },
+    {
+      "id": "舟舟",
+      "label": "舟舟"
+    }
+  ],
+  "edges": [
+    {
+      "id": "林遥 × 舟舟",
+      "source": "林遥",
+      "target": "舟舟",
+      "label": "彼此牵挂",
+      "relationship_type": "彼此牵挂",
+      "strength": 0.95,
+      "direction": "不明确",
+      "timeline": [
+        {
+          "stage": "彼此牵挂",
+          "state": "林遥想让舟舟先走，舟舟撕掉船票，选择留下陪她等待。",
+          "change_event": "深度分析后补充",
+          "scene_ids": [
+            "S0001",
+            "S0002"
+          ],
+          "evidence_ids": [
+            "S0001",
+            "S0002"
+          ]
+        }
+      ],
+      "breakthroughs": [],
+      "stages": [
+        {
+          "stage": "彼此牵挂",
+          "start_scene": "S0001",
+          "end_scene": "S0002",
+          "relation_label": "彼此牵挂",
+          "strength": 0.95,
+          "change_status": "待确认",
+          "direction": "不明确",
+          "latest_change": "深度分析后补充",
+          "scene_ids": [
+            "S0001",
+            "S0002"
+          ],
+          "evidence_ids": [
+            "S0001",
+            "S0002"
+          ]
+        }
+      ]
+    }
+  ],
+  "stage_labels": [
+    "彼此牵挂"
+  ]
+}

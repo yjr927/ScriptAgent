@@ -1,0 +1,20 @@
+[
+  {
+    "id": "S0001",
+    "order": 1,
+    "heading": "INT. 售票亭 - 夜",
+    "start_line": 1,
+    "end_line": 5,
+    "text": "INT. 售票亭 - 夜\n林遥把最后一张船票递给舟舟。\n林遥：你先走，我答应过你妈妈。\n舟舟：那你呢？",
+    "digest": "a79abbd7faf20a588e2daa0b52919daa898b5545904a9b4454ea138cb41a1186"
+  },
+  {
+    "id": "S0002",
+    "order": 2,
+    "heading": "EXT. 码头 - 黎明",
+    "start_line": 6,
+    "end_line": 9,
+    "text": "EXT. 码头 - 黎明\n舟舟跑回岸上，把船票撕成两半。\n舟舟：一起等下一班。\n林遥拿起对讲机，告诉船长还有两个人。",
+    "digest": "8e2283eb0f83709c0135c0a0a58d43e5e1d0ff786b0c651c3effdf35ad317622"
+  }
+]

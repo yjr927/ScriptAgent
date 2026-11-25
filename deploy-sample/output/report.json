@@ -1,0 +1,433 @@
+{
+  "meta": {
+    "source_name": "末班渡船.txt",
+    "source_digest": "4b93040baacf247293d82ee5789a8e61a63faf4529f7c8dfceb4c70b4cc2cf9f",
+    "prompt_version": "2026-11-12.1",
+    "extract_model": "gpt-6-luna",
+    "synthesis_model": "not-used",
+    "generated_at": "2026-11-25T06:37:19.889694+00:00",
+    "scene_count_analyzed": 2,
+    "scene_count_total": 2,
+    "partial_analysis": false,
+    "fast_mode": true,
+    "analysis_depth": "quick_overview",
+    "preview_sampling": false,
+    "review_warning": "这是快速概览，不是正式设定；深层性格、变化与信息差需继续分析并由编剧确认。"
+  },
+  "characters": {
+    "林遥": {
+      "character_name": "林遥",
+      "aliases": [],
+      "one_line_positioning": [
+        {
+          "claim": "遇事先替舟舟安排退路，也愿意留下承担风险。",
+          "review_status": "人物理解",
+          "confidence": 0.85,
+          "evidence_ids": [
+            "S0001",
+            "S0002"
+          ],
+          "counterevidence_ids": [],
+          "notes": "快速概览结论；点击深度分析后再补充逐场证据与变化线。"
+        }
+      ],
+      "first_impression": [
+        {
+          "claim": "遇事先替舟舟安排退路，也愿意留下承担风险。",
+          "review_status": "人物理解",
+          "confidence": 0.85,
+          "evidence_ids": [
+            "S0001",
+            "S0002"
+          ],
+          "counterevidence_ids": [],
+          "notes": "快速概览结论；点击深度分析后再补充逐场证据与变化线。"
+        }
+      ],
+      "deeper_personality_and_needs": [],
+      "most_wanted": [],
+      "greatest_fears": [],
+      "conflict_pattern": [],
+      "intimacy_pattern": [],
+      "central_contradictions": [],
+      "speech_rhythm_wording_emotion": [],
+      "will_not_say_or_do": [],
+      "arc": {
+        "starting_state": "深度分析后补充",
+        "stages": [],
+        "turning_points": [],
+        "ending_state": "深度分析后补充",
+        "overall_change": "快速版暂不判断角色变化。",
+        "change_confirmed": false
+      },
+      "personality_changes": [],
+      "personality_change_summary": "快速版暂不判断人物性格画像是否改变。",
+      "personality_watchlist": [
+        "完成深度分析后区分临时状态与稳定变化。"
+      ],
+      "poster_brief": {
+        "first_glance_message": "快速版不生成视觉设定。",
+        "expression": [],
+        "posture_and_action": [],
+        "clothing_and_props": [],
+        "color_and_light": [],
+        "copy_tone": [],
+        "avoid_mismatches": [],
+        "note": "完成深度角色卡后再生成视觉建议。"
+      },
+      "unconfirmed_questions": [
+        "这个初步印象是否会在后续剧情中发生变化？"
+      ],
+      "_meta": {
+        "model": "quick-script-preview",
+        "profile_mode": "preview",
+        "prompt_version": "2026-11-12.1",
+        "generated_at": "2026-11-25T06:37:19.889466+00:00"
+      }
+    },
+    "舟舟": {
+      "character_name": "舟舟",
+      "aliases": [],
+      "one_line_positioning": [
+        {
+          "claim": "不愿独自离开，主动选择与林遥一起等待。",
+          "review_status": "人物理解",
+          "confidence": 0.85,
+          "evidence_ids": [
+            "S0001",
+            "S0002"
+          ],
+          "counterevidence_ids": [],
+          "notes": "快速概览结论；点击深度分析后再补充逐场证据与变化线。"
+        }
+      ],
+      "first_impression": [
+        {
+          "claim": "不愿独自离开，主动选择与林遥一起等待。",
+          "review_status": "人物理解",
+          "confidence": 0.85,
+          "evidence_ids": [
+            "S0001",
+            "S0002"
+          ],
+          "counterevidence_ids": [],
+          "notes": "快速概览结论；点击深度分析后再补充逐场证据与变化线。"
+        }
+      ],
+      "deeper_personality_and_needs": [],
+      "most_wanted": [],
+      "greatest_fears": [],
+      "conflict_pattern": [],
+      "intimacy_pattern": [],
+      "central_contradictions": [],
+      "speech_rhythm_wording_emotion": [],
+      "will_not_say_or_do": [],
+      "arc": {
+        "starting_state": "深度分析后补充",
+        "stages": [],
+        "turning_points": [],
+        "ending_state": "深度分析后补充",
+        "overall_change": "快速版暂不判断角色变化。",
+        "change_confirmed": false
+      },
+      "personality_changes": [],
+      "personality_change_summary": "快速版暂不判断人物性格画像是否改变。",
+      "personality_watchlist": [
+        "完成深度分析后区分临时状态与稳定变化。"
+      ],
+      "poster_brief": {
+        "first_glance_message": "快速版不生成视觉设定。",
+        "expression": [],
+        "posture_and_action": [],
+        "clothing_and_props": [],
+        "color_and_light": [],
+        "copy_tone": [],
+        "avoid_mismatches": [],
+        "note": "完成深度角色卡后再生成视觉建议。"
+      },
+      "unconfirmed_questions": [
+        "这个初步印象是否会在后续剧情中发生变化？"
+      ],
+      "_meta": {
+        "model": "quick-script-preview",
+        "profile_mode": "preview",
+        "prompt_version": "2026-11-12.1",
+        "generated_at": "2026-11-25T06:37:19.889556+00:00"
+      }
+    }
+  },
+  "relationships": {
+    "林遥 × 舟舟": {
+      "person_a": "林遥",
+      "person_b": "舟舟",
+      "relationship_type": "彼此牵挂",
+      "relationship_strength": 0.95,
+      "relationship_direction": "不明确",
+      "how_they_met": [],
+      "surface_relation": [
+        {
+          "claim": "彼此牵挂",
+          "review_status": "人物理解",
+          "confidence": 0.85,
+          "evidence_ids": [
+            "S0001",
+            "S0002"
+          ],
+          "counterevidence_ids": [],
+          "notes": "快速概览结论；点击深度分析后再补充逐场证据与变化线。"
+        }
+      ],
+      "underlying_state": [
+        {
+          "claim": "林遥想让舟舟先走，舟舟撕掉船票，选择留下陪她等待。",
+          "review_status": "人物理解",
+          "confidence": 0.85,
+          "evidence_ids": [
+            "S0001",
+            "S0002"
+          ],
+          "counterevidence_ids": [],
+          "notes": "快速概览结论；点击深度分析后再补充逐场证据与变化线。"
+        }
+      ],
+      "a_view_of_b": [],
+      "b_view_of_a": [],
+      "a_wants": [],
+      "b_wants": [],
+      "initiative_and_control": [],
+      "important_shared_events": [],
+      "current_conflict": [],
+      "unspoken_information": [],
+      "timeline": [
+        {
+          "stage": "彼此牵挂",
+          "state": "林遥想让舟舟先走，舟舟撕掉船票，选择留下陪她等待。",
+          "change_event": "深度分析后补充",
+          "scene_ids": [
+            "S0001",
+            "S0002"
+          ],
+          "evidence_ids": [
+            "S0001",
+            "S0002"
+          ]
+        }
+      ],
+      "breakthroughs": [],
+      "graph_stages": [
+        {
+          "stage": "彼此牵挂",
+          "start_scene": "S0001",
+          "end_scene": "S0002",
+          "relation_label": "彼此牵挂",
+          "strength": 0.95,
+          "change_status": "待确认",
+          "direction": "不明确",
+          "latest_change": "深度分析后补充",
+          "scene_ids": [
+            "S0001",
+            "S0002"
+          ],
+          "evidence_ids": [
+            "S0001",
+            "S0002"
+          ]
+        }
+      ],
+      "current_stage": "彼此牵挂",
+      "story_truth_vs_audience_view": [],
+      "unresolved_questions": [
+        "双方视角、权力变化与未说出口的信息待深度分析。"
+      ],
+      "_meta": {
+        "model": "quick-script-preview",
+        "profile_mode": "preview",
+        "prompt_version": "2026-11-12.1",
+        "generated_at": "2026-11-25T06:37:19.889583+00:00"
+      }
+    }
+  },
+  "story_progress": {
+    "overall_progress": "已完成当前范围的快速剧情导航。",
+    "overall_pace": "待确认",
+    "pace_score": 0,
+    "stages": [
+      {
+        "stage": "故事前段",
+        "start_scene": "S0001",
+        "end_scene": "S0001",
+        "progress_summary": "INT. 售票亭 - 夜",
+        "narrative_tasks_completed": [],
+        "conflict_phase": "待确认",
+        "pace": "待确认",
+        "pace_reason": "快速模式只提供场景导航，深度分析后判断节奏。",
+        "repetition_or_stall": [],
+        "inactive_character_or_relationship_lines": [],
+        "scene_ids": [
+          "S0001"
+        ]
+      },
+      {
+        "stage": "故事中段",
+        "start_scene": "S0002",
+        "end_scene": "S0002",
+        "progress_summary": "EXT. 码头 - 黎明",
+        "narrative_tasks_completed": [],
+        "conflict_phase": "待确认",
+        "pace": "待确认",
+        "pace_reason": "快速模式只提供场景导航，深度分析后判断节奏。",
+        "repetition_or_stall": [],
+        "inactive_character_or_relationship_lines": [],
+        "scene_ids": [
+          "S0002"
+        ]
+      }
+    ],
+    "stage_comparisons": [],
+    "version_comparison": {
+      "has_previous_version": false,
+      "previous_source_name": "",
+      "added_or_expanded": [],
+      "removed_or_weakened": [],
+      "materially_changed": [],
+      "character_changes": [],
+      "relationship_changes": [],
+      "pace_changes": [],
+      "notes": "深度分析后生成版本对比。"
+    },
+    "priority_notes": [
+      "完成深度分析后可查看节奏问题与阶段对比。"
+    ]
+  },
+  "knowledge_ledger": [],
+  "review_queue": [
+    {
+      "owner_type": "角色",
+      "owner": "林遥",
+      "path": "one_line_positioning[0]",
+      "claim": "遇事先替舟舟安排退路，也愿意留下承担风险。",
+      "suggested_status": "人物理解",
+      "confidence": 0.85,
+      "evidence_ids": [
+        "S0001",
+        "S0002"
+      ],
+      "editor_decision": "",
+      "editor_notes": ""
+    },
+    {
+      "owner_type": "角色",
+      "owner": "林遥",
+      "path": "first_impression[0]",
+      "claim": "遇事先替舟舟安排退路，也愿意留下承担风险。",
+      "suggested_status": "人物理解",
+      "confidence": 0.85,
+      "evidence_ids": [
+        "S0001",
+        "S0002"
+      ],
+      "editor_decision": "",
+      "editor_notes": ""
+    },
+    {
+      "owner_type": "角色",
+      "owner": "林遥",
+      "path": "unconfirmed_questions",
+      "claim": "这个初步印象是否会在后续剧情中发生变化？",
+      "suggested_status": "待确认",
+      "confidence": 0,
+      "evidence_ids": [],
+      "editor_decision": "",
+      "editor_notes": ""
+    },
+    {
+      "owner_type": "角色",
+      "owner": "舟舟",
+      "path": "one_line_positioning[0]",
+      "claim": "不愿独自离开，主动选择与林遥一起等待。",
+      "suggested_status": "人物理解",
+      "confidence": 0.85,
+      "evidence_ids": [
+        "S0001",
+        "S0002"
+      ],
+      "editor_decision": "",
+      "editor_notes": ""
+    },
+    {
+      "owner_type": "角色",
+      "owner": "舟舟",
+      "path": "first_impression[0]",
+      "claim": "不愿独自离开，主动选择与林遥一起等待。",
+      "suggested_status": "人物理解",
+      "confidence": 0.85,
+      "evidence_ids": [
+        "S0001",
+        "S0002"
+      ],
+      "editor_decision": "",
+      "editor_notes": ""
+    },
+    {
+      "owner_type": "角色",
+      "owner": "舟舟",
+      "path": "unconfirmed_questions",
+      "claim": "这个初步印象是否会在后续剧情中发生变化？",
+      "suggested_status": "待确认",
+      "confidence": 0,
+      "evidence_ids": [],
+      "editor_decision": "",
+      "editor_notes": ""
+    },
+    {
+      "owner_type": "关系",
+      "owner": "林遥 × 舟舟",
+      "path": "surface_relation[0]",
+      "claim": "彼此牵挂",
+      "suggested_status": "人物理解",
+      "confidence": 0.85,
+      "evidence_ids": [
+        "S0001",
+        "S0002"
+      ],
+      "editor_decision": "",
+      "editor_notes": ""
+    },
+    {
+      "owner_type": "关系",
+      "owner": "林遥 × 舟舟",
+      "path": "underlying_state[0]",
+      "claim": "林遥想让舟舟先走，舟舟撕掉船票，选择留下陪她等待。",
+      "suggested_status": "人物理解",
+      "confidence": 0.85,
+      "evidence_ids": [
+        "S0001",
+        "S0002"
+      ],
+      "editor_decision": "",
+      "editor_notes": ""
+    },
+    {
+      "owner_type": "关系",
+      "owner": "林遥 × 舟舟",
+      "path": "unresolved_questions",
+      "claim": "双方视角、权力变化与未说出口的信息待深度分析。",
+      "suggested_status": "待确认",
+      "confidence": 0,
+      "evidence_ids": [],
+      "editor_decision": "",
+      "editor_notes": ""
+    }
+  ],
+  "evidence_catalog": {},
+  "alias_index": {
+    "name_to_canonical": {
+      "林遥": "林遥",
+      "舟舟": "舟舟"
+    },
+    "canonical_aliases": {
+      "林遥": [],
+      "舟舟": []
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": 1,
+  "prompt_version": "2026-11-12.1",
+  "source_name": "末班渡船.txt",
+  "source_path": "/tmp/末班渡船.txt",
+  "source_digest": "4b93040baacf247293d82ee5789a8e61a63faf4529f7c8dfceb4c70b4cc2cf9f",
+  "scene_count": 2,
+  "version_number": 1,
+  "previous_run_id": "",
+  "max_scene_chars": 14000,
+  "prepared_at": "2026-11-25T06:37:14.216299+00:00",
+  "privacy_note": "本目录含剧本文本和分析证据，请按公司保密要求保存。",
+  "last_analysis": {
+    "source_name": "末班渡船.txt",
+    "source_digest": "4b93040baacf247293d82ee5789a8e61a63faf4529f7c8dfceb4c70b4cc2cf9f",
+    "prompt_version": "2026-11-12.1",
+    "extract_model": "gpt-6-luna",
+    "synthesis_model": "not-used",
+    "generated_at": "2026-11-25T06:37:19.889694+00:00",
+    "scene_count_analyzed": 2,
+    "scene_count_total": 2,
+    "partial_analysis": false,
+    "fast_mode": true,
+    "analysis_depth": "quick_overview",
+    "preview_sampling": false,
+    "review_warning": "这是快速概览，不是正式设定；深层性格、变化与信息差需继续分析并由编剧确认。"
+  }
+}
