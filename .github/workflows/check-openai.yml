@@ -1,0 +1,62 @@
+name: Test ScriptAgent OpenAI access
+on:
+  push:
+    branches: [check/openai-actions-4f65a05]
+    paths: ['.github/workflows/check-openai.yml']
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install OpenAI client
+        run: python3 -m pip install --quiet 'openai>=2,<3'
+      - name: Read one character from a fictional line
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: https://api.openai.com/v1
+          OPENAI_TIMEOUT_SECONDS: '45'
+        shell: python
+        run: |
+          import os
+          import sys
+          sys.path.insert(0, os.environ["GITHUB_WORKSPACE"])
+          from script_agent.openai_client import ModelCallError, StructuredModelClient
+
+          if not os.environ.get("OPENAI_API_KEY", "").strip():
+              sys.exit("OPENAI_API_KEY is unavailable to this job.")
+          client = StructuredModelClient(retries=1)
+          schema = {
+              "type": "object",
+              "properties": {"speaker": {"type": "string"}},
+              "required": ["speaker"],
+              "additionalProperties": False,
+          }
+          for model in ("gpt-6-luna", "gpt-4.1-mini"):
+              try:
+                  result = client.generate(
+                      model=model,
+                      instructions="Extract the speaker's name exactly as written.",
+                      input_text="Mira: I found the missing map.",
+                      schema_name="speaker_check",
+                      schema=schema,
+                      max_output_tokens=1000,
+                  )
+              except ModelCallError as exc:
+                  cause = exc.__cause__
+                  status = getattr(cause, "status_code", None)
+                  code = getattr(cause, "code", None)
+                  known_codes = {"model_not_found", "insufficient_quota", "invalid_api_key", "rate_limit_exceeded", "permission_denied", "invalid_request_error", "unsupported_parameter"}
+                  label = code if isinstance(code, str) and code in known_codes else type(cause).__name__
+                  print(f"{model}: HTTP {status}, {label}", flush=True)
+                  if code == "model_not_found" and model == "gpt-6-luna":
+                      continue
+                  sys.exit("OpenAI request did not complete.")
+              if result.get("speaker", "").strip().casefold() != "mira":
+                  sys.exit("The response did not match the test scene.")
+              print(f"PASS: {model} returned valid structured output. Speaker: Mira.")
+              break
