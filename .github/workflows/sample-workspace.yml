@@ -22,6 +22,8 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         shell: python
         run: |
+          import os, sys
+          sys.path.insert(0, os.environ['GITHUB_WORKSPACE'])
           from pathlib import Path
           import shutil
           from script_agent.pipeline import prepare_script, analyze_quick_preview, AnalysisConfig
