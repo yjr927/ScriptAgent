@@ -1,0 +1,75 @@
+name: Connect existing OpenAI secret to ScriptAgent
+on:
+  push:
+    branches: [ops/connect-site-openai-20261126]
+    paths: ['.github/workflows/connect-site-openai.yml']
+permissions:
+  contents: read
+jobs:
+  connect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify the existing OpenAI key and encrypt the deployment handoff
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        shell: python
+        run: |
+          import json, os, pathlib, subprocess, sys, urllib.request, urllib.error
+          key = os.environ.get("OPENAI_API_KEY", "").strip()
+          if not key:
+              sys.exit("Repository secret OPENAI_API_KEY is unavailable.")
+          if len(key.encode()) > 446:
+              sys.exit("Secret length exceeds this one-time transport limit.")
+          payload = {
+              "model": "gpt-6-luna",
+              "input": "Return connected true to confirm this connection test.",
+              "text": {"format": {"type": "json_schema", "name": "connection_test", "strict": True,
+                  "schema": {"type": "object", "properties": {"connected": {"type": "boolean"}},
+                             "required": ["connected"], "additionalProperties": False}}},
+              "max_output_tokens": 1000,
+              "store": False
+          }
+          request = urllib.request.Request("https://api.openai.com/v1/responses",
+              data=json.dumps(payload).encode(),
+              headers={"Authorization": "Bearer " + key, "Content-Type": "application/json"},
+              method="POST")
+          try:
+              with urllib.request.urlopen(request, timeout=90) as response:
+                  result = json.load(response)
+          except urllib.error.HTTPError as error:
+              sys.exit("OpenAI connectivity check returned HTTP " + str(error.code) + ".")
+          except Exception:
+              sys.exit("OpenAI connectivity check did not complete.")
+          output = "".join(part.get("text", "") for item in result.get("output", [])
+                           for part in item.get("content", []) if part.get("type") == "output_text")
+          if result.get("status") != "completed" or json.loads(output).get("connected") is not True:
+              sys.exit("OpenAI connectivity response did not match the test.")
+          print("PASS: Repository OPENAI_API_KEY returned valid structured output with gpt-6-luna.")
+          public_key = "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAw4aFeJJaF4fts3fjTN8S\nGRxifA9GEpLQzaZYeOn+2AULy0JzRrh/rlocvVYg9UjPmllpVoZv8B4bNm7d6lQ1\nDz2/QuO8oJq1f5Yua0z7vJ8DuWJPucYBXoNJO7y7/iUAUJXX/q3oDLLW+zzoZd3M\nuGOpQlQz3r7DXH185iWnW8T88Co77+f2Zij2xRri2ac29bjiACYfgLaiyDH53nmP\nHRpLmzsShGz6ApvNyDrCuVDfPy9F6pmUvQt9eOAe2eeB6zDS5tTteea6fzPMVDXX\nQHYSbUY3UBrB1tL/2wFYxjQ+14B0Z4h1hTIKMBhSvS1syFNrYvHDilMrREFx6ttS\nuDqlOyxUP21wsC2aypmi0d6SkgQlU35XZal6tPT0PAFUKocDn5bpEsb+23I4BVt9\n8lNh73p4uWCXjeRGOMboxVANaZpLRI3LT71wxpNELkk6x3KiBUZPnCGhqTFqRq/3\np7/a1HBdJKb+BMrgPaG2CwWU8oCcczwTshue9s215S0jZ5ubSRCDXfjhKSMJJDNb\neg2Yid+ERGGHGOvYoLTW4FLI9L/d9I6/wTQ5LN5wRG2SQ8rSqEZTjDNEXXwDuaq5\nEbdD0kn0Brh4dP9lktYoyOcAlLXXcmus6zVu5mq5u4pcVBZxmLP0Y46wRpwGiJBZ\njGW/oP63Rb0I/lnYLGN9g9MCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+          directory = pathlib.Path("encrypted-handoff")
+          directory.mkdir(mode=0o700)
+          public_path = pathlib.Path("handoff-public.pem")
+          public_path.write_text(public_key)
+          encrypted = subprocess.run(
+              ["openssl", "pkeyutl", "-encrypt", "-pubin", "-inkey", str(public_path),
+               "-pkeyopt", "rsa_padding_mode:oaep", "-pkeyopt", "rsa_oaep_md:sha256",
+               "-pkeyopt", "rsa_mgf1_md:sha256"],
+              input=key.encode(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+          if encrypted.returncode != 0 or len(encrypted.stdout) != 512:
+              sys.exit("Encrypted deployment handoff failed.")
+          (directory / "openai-key.rsa-oaep").write_bytes(encrypted.stdout)
+          (directory / "metadata.json").write_text(json.dumps({
+              "target_site": "appgprj_6b06813f0b348191b68f8088ad79640b",
+              "target_secret": "OPENAI_API_KEY",
+              "algorithm": "RSA-4096-OAEP-SHA256",
+              "verification": "gpt-6-luna structured output passed"
+          }))
+          print("Prepared an encrypted, one-time handoff for the existing private ScriptAgent site.")
+      - name: Upload encrypted handoff
+        uses: actions/upload-artifact@v4
+        with:
+          name: scriptagent-encrypted-openai-handoff
+          path: encrypted-handoff/
+          if-no-files-found: error
+          retention-days: 1
